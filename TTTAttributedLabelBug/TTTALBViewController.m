@@ -50,6 +50,14 @@
                        action:@selector(didTapChangeToItalic:)
              forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:changeToItalic];
+    
+    UIButton *changeText = [[UIButton alloc]
+                            initWithFrame:CGRectMake(0, height * 5, width, height)];
+    [changeText setTitle:@"Change the text" forState:UIControlStateNormal];
+    [changeText addTarget:self
+                       action:@selector(didTapChangeText:)
+             forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:changeText];
 }
 
 - (void)didTapChangeToBold:(UIButton*)sender
@@ -64,6 +72,13 @@
     UIFont *font = [UIFont italicSystemFontOfSize:15];
     [self.uiLabel setFont:font];
     [self.tttAttributedLabel setFont:font];
-}s
+}
+
+- (void)didTapChangeText:(UIButton*)sender
+{
+    NSString *text = @"This is some new fresh text";
+    [self.uiLabel setText:text];
+    [self.tttAttributedLabel setText:text];
+}
 
 @end
