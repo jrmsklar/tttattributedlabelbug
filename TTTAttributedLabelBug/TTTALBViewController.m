@@ -56,9 +56,8 @@
 
 - (void)didTapChangeText:(UIButton*)sender
 {
-    NSString *text = @"This is some new fresh text";
-    [self.uiLabel setText:text];
-    [self.tttAttributedLabel setText:text];
+    [self.uiLabel setText:@"New text for the UILabel"];
+    [self.tttAttributedLabel setText:@"New text for the TTTAttributedLabel"];
 }
 
 - (void)setupUILabel
